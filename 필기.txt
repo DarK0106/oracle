@@ -1,0 +1,150 @@
+오라클, Oracle
+
+1. Oracle Database 21c XE
+    - 데이터베이스
+
+2. SQL Developer
+    - 데이터베이스 클라이언트 도구
+
+자바 응용 프로그램을 만드는 중~
+    -> 목적? -> 대부분의 프로그램은 데이터를 관리하는게 목적이다
+
+데이터를 관리하는 방법?
+
+1. 파일 시스템
+    - 물리적으로는 가능해도 생산성은 원시적 수준
+
+2. 관계형 데이터베이스(Relational Database, RDB)
+    - 최종적으로 채택된 방법 -> 지금까지도 대체제 없음
+    - 데이터를 표에 저장하는 방식
+
+3. 관계형 데이터베이스를 프로그램적으로 관리해주는 관리 시스템(Relational Database Management System, RDBMS)
+    - RDB + RDBMS -> Oracle
+
+    - DB를 뭘썼습니까? Oracle
+    - RDB를 뭘썼습니까? Oracle
+    - DBMS를 뭘썼습니까? Oracle
+    - RDBMS를 뭘썼습니까? Oracle
+
+오라클 사용 계층
+1. 데이터베이스 관리자(DBA)
+2. 데이터베이스 개발자
+3. 응용 프로그램 개발자(나)
+
+Oracle은 UI가 없다(눈에 보이는 화면 X)
+- 윈도우즈 -> 서비스
+- 리눅스 -> 데몬(Daemon)
+
+오라클 동작 확인하는 방법?
+1. 작업 관리자 -> 서비스
+    - OracleServiceXE -> 오라클 데이터베이스 <- 가장 중요한 녀석
+    - OracleOraDB21Home1TNSListener <- 클라이언트 접속 서비스
+
+2. Win + R -> services.msc
+
+SQL Developer 이름 설정하는법
+호스트 이름.사용자 이름 or 사용자 이름@호스트 이름
+
+클라이언트 도구
+
+1. SQL Developer
+2. SQL*Plus
+3. Toad
+4. SQLGate
+5. DataGrip -> JetBrains 에서 만들었음 -> 원래 유료였는데 완전 무료로 전환
+6. DBeaver -> 완전 무료
+
+일반 사용자용 계정 생성하기
+1. 샘플 계정
+    - hr, scott
+2. 직접 계정 생성하기
+    - create user 유저이름 identified by 비밀번호; <- 하면 계정 1개 만들어짐
+
+   계정 삭제하기
+    - drop user 유저명;
+
+SQL, Structured Query Language, 그냥 Query 라고도 부름
+ - 관계형 대이터베이스를 조작하는 언어
+
+자바 연동 RDB
+ - Oracle
+ - MySQL
+ - MariaDB
+ - PostgreSQL
+ - DB2
+ - MS SQL Server
+ - H2
+
+
+
+1. SQL과 RDBMS은 서로 독립적으로 관리된다.
+    - SQL -> 모든 데이터베이스에서 사용하는 공통 언어
+    - Oracle 이라는 데이터베이스 프로그램은 Oracle 에서 만든 것
+
+2. 표준 SQL(ANSI-SQL)
+    - 모든  DB에 적용 가능한 중립적인 SQL
+3. DB 제조사(DBMS)에서 만든 SQL
+    - 특정 DB에서 적용 가능한 SQL
+    - Oracle -> PL/SQL
+    - MS-SQL -> T-SQL
+
+3. 오라클 수업은 ANSI SQL과 PL/SQL을 배우고 DB 설계도 배운다
+
+ANSI-SQL
+
+1. DDL
+    - Data Definition Language
+    - 데이터 정의어
+    - DB의 구조를 생성/관리하는 명령어
+    - 데이터베이스 객체 중에 가장 중요한게 테이블 뷰 사용자 인덱스 등
+    - 이걸 생성하고 수정하고 삭제하는 명령어들을 DDL이라고 한다
+    a. create: 생성
+    b. drop: 삭제
+    c: alter: 수정
+
+2. DML
+    - Data Manipulation Language
+    - 데이터 조작어
+    - 테이블에 있는 데이터를 추가하거나 수정하거나 삭제하거나 조회하는 명령어
+    - CRUD, Create / Read / Update / Delete
+    - 사용 빈도가 가장 높음
+    a. select: 조회 -> R
+    b. insert: 추가 -> C
+    c. update: 수정 -> U
+    d: delete: 삭제 -> D
+
+3. DCL
+    - Data Control Language
+    - 데이터 제어어
+    - 계정 관리, 보안 관리, 트랜잭션 처리 등 ..
+    a. commit
+    b. rollback
+    c. grant
+    d. revoke
+
+
+
+4. DQL
+    - Data Query Language
+    - DML 중 select문을 따로 부르는 표현
+    - select 라는 명령어가 엄청 중요함
+    - 워낙 중요해서 아예 카테고리를 따로 뺐음
+
+
+5. TCL
+    - Transaction Control Language
+    - DCL 중 commit/rollback 문을 따로 부르는 표현
+    - 얘도 마찬가지로 매우 중요해서 카테고리를 따로 뺐음
+
+오라클이라는 환경은 어떤 인코딩을 쓸까?
+
+자바는 UTF-8
+오라클 1.0 ~ 1.8 까진 EUC-KR
+9i ~ 현재: UTF-8
+
+SQL -> 대소문자를 구분하지 않는 언어
+- 문법에서 사용하는 키워드는 모두 다 대문자
+- 식별자는 소문자
+
+select name from member;
+SELECT name FROM member; <- 이런 느낌
