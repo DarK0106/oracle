@@ -145,16 +145,24 @@ select *
 
 -- 24.tblInsa
 -- 서울, 인천에 사는 김씨만 가져오시오.    
-
+select *
+    from tblInsa
+        where city in ('서울', '인천') and name like '김%';
 
 -- 25.tblInsa
 -- 영업부/총무부/개발부 직원 중 사원급(사원/대리) 중에 010을 사용하는 직원들을 가져오시오.
-
+select *
+    from tblInsa
+        where buseo in ('영업부', '총무부', '개발부') and jikwi in ('사원', '대리') and tel like '010-%';
 
 -- 26.tblInsa
 -- 서울/인천/경기에 살고 입사일이 2008~2010년 사이인 직원들을 가져오시오.
-
+select *
+    from tblInsa
+        where city in ('서울', '인천', '경기') and ibsadate between '08/01/01' and '10/12/31';
 
 -- 27.employees
 -- 부서가 아직 배정 안된 직원들을 가져오시오. (department_id가 없는 직원)
-
+select *
+    from employees
+        where department_id is null;
