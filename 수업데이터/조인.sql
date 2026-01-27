@@ -21,6 +21,8 @@ create table tblSales (
 
 -- 4개
 
+-- 비디오 대여방?
+
 -- 장르
 create table tblGenre (
     seq number primary key,     --장르번호(PK)
